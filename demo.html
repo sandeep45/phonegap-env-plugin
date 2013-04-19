@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <script type="text/javascript" src="cordova-2.3.0.js"></script>
+    <script type="text/javascript" src="env.js"></script>
+    <script>
+      function onLoad() {
+        document.addEventListener(
+          ‘deviceready’, onDeviceReady, false
+        );
+      }
+      function onDeviceReady() {
+        var env = window.plugins.env;
+        env.env(this,function(ans){
+          if(ans === "Debug"){
+            alert(ans);
+          }
+        },function(ans){
+            alert("ERROR");
+        });  
+      }
+    </script>
+  </head>
+  <body onload=”onLoad();”>
+    Make sure you have set the preprocessors before running this.
+    <img src="settings.png">
+  </body>
+</html>    
