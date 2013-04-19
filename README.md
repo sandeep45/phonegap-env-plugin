@@ -7,9 +7,10 @@ Common use case is to do load a different url or process things differently when
 Step 1. Add preprocessors to your project
 ------------------------------------------
 
-For this plugin to work, you first need to add a preprocessor to your project.
+For this plugin to work, you first need to __add a preprocessor__ to your project.
 In Xcode click on your project, select your target and under preprocessor macros add appenv=1 for debug and appenv=0 for release.
-[Screenshot of Preprocessors set][settings.png]
+
+![Screenshot](settings.png)
 
 Step 2. Add Plugin files
 ------------------------------------------
@@ -20,18 +21,21 @@ Step 3. Enable the plugin
 ----------------------------
 
 In you config.xml add the following line:
-	<plugin name="Env" value="Env" />
+
+`<plugin name="Env" value="Env" />`
 
 Step 4. Include Plugin Javascript File
 ----------------------------------------
 
 Add env.js file in your index.html like this:
-	<script type="text/javascript" src="env.js"></script>
+
+`<script type="text/javascript" src="env.js"></script>`
 
 Step 5. Detect the Environment
 ------------------------------------
 
 Use the following code to detect environment
+```javascript
 	var env = window.plugins.env;
 	env.env(this,function(ans){
 	  if(ans === "Debug"){
@@ -40,6 +44,6 @@ Use the following code to detect environment
 	},function(ans){
 	    alert("ERROR");
 	}); 
-
+```
 
 
